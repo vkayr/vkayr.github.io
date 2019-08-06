@@ -1,0 +1,522 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Gridea</title>
+<meta name="description" content="温故而知新" />
+<link rel="shortcut icon" href="D:/UserData/Documents/Gridea/output/favicon.ico?v=1565065846901">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
+<link rel="stylesheet" href="D:/UserData/Documents/Gridea/output/styles/main.css">
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main px-4 flex flex-col lg:flex-row">
+      <div id="sidebar" class="sidebar-wrapper lg:static lg:w-1/4">
+  <div class="lg:sticky top-0">
+    <div class="sidebar-content">
+      <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
+        <i class="remixicon-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
+        <a href="D:/UserData/Documents/Gridea/output">
+          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="D:/UserData/Documents/Gridea/output/images/avatar.png?v=1565065846901" alt="">
+        </a>
+        <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">Gridea</h1>
+      </div>
+      
+        <div class="animated fadeInLeft" style="animation-delay: 0.4s">
+          <p class="my-4 text-gray-600 font-light hidden lg:block">
+            文章目录
+          </p>
+          <div class="toc-container hidden lg:block">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E4%B8%80-%E5%A1%AB%E7%A9%BA">一、填空</a></li>
+<li><a href="#%E4%BA%8C-%E7%A8%8B%E5%BA%8F%E9%98%85%E8%AF%BB%E9%A2%98">二、程序阅读题</a></li>
+<li><a href="#%E4%B8%89-%E7%BC%96%E7%A8%8B%E9%A2%98">三、编程题</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+<div class="menu-container">
+  <i class="remixicon-arrow-left-line text-2xl cursor-pointer animated fadeIn close-menu-btn" onclick="closeMenu()"></i>
+  <div>
+    
+      
+        <a href="D:/UserData/Documents/Gridea/output//index.html" class="menu" style="animation-delay: 0s">
+          首页
+        </a>
+      
+    
+      
+        <a href="D:/UserData/Documents/Gridea/output/archives/index.html" class="menu" style="animation-delay: 0.2s">
+          归档
+        </a>
+      
+    
+      
+        <a href="D:/UserData/Documents/Gridea/output/tags/index.html" class="menu" style="animation-delay: 0.4s">
+          标签
+        </a>
+      
+    
+      
+        <a href="D:/UserData/Documents/Gridea/output/post/about/index.html" class="menu" style="animation-delay: 0.6000000000000001s">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="site-footer">
+    <div class="py-4 text-gray-700">Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a></div>
+    <a class="rss" href="D:/UserData/Documents/Gridea/output/atom.xml" target="_blank">RSS</a>
+  </div>
+</div>
+<div class="mask" onclick="closeMenu()">
+</div>
+      <div class="content-wrapper py-32 lg:p-8 lg:w-3/4 post-detail animated fadeIn">
+        <h1 class="text-3xl font-bold lg:mt-16">JAVA</h1>
+        <div class="text-sm text-gray-700 lg:my-8">
+          2019-08-06 / 5 min read
+        </div>
+        
+        <div class="post-content yue">
+          <h2 id="一-填空">一、填空</h2>
+<br>
+<ol>
+<li>
+<p>A software object's state is stored in  <strong><code>fields</code></strong>, it’s behavior is exposed through <strong><code>methods</code></strong>. 软件对象的状态存储在字段中。软件对象的行为是通过方法公开的。</p>
+</li>
+<li>
+<p>Common behavior can be defined in a <strong><code>superclass</code></strong> and inherited into a <strong><code>subclass</code></strong> using the <strong><code>extends</code></strong> keyword. 常见的行为可以在一个父类继承到子类的定义和使用extends关键字。</p>
+</li>
+<li>
+<p>A collection of methods with no implementation is called an <strong><code>interface</code>.</strong> 没有实现的方法集合称为接口。</p>
+</li>
+<li>
+<p>The term &quot;class variable&quot; is another name for <strong><code>static field</code></strong>.</p>
+</li>
+<li>
+<p>Operators may be used in building <strong><code>expressions</code></strong>, which compute values. 运算符可以用于构建表达式，该表达式计算值。</p>
+</li>
+<li>
+<p>The <strong><code>do-while</code></strong> statement is similar to the while statement, but evaluates its expression at the bottom of the loop.  do-while语句类似于while语句，但在循环的底部计算其表达式。</p>
+</li>
+<li>
+<p>A namespace that organizes classes and interfaces by functionality is called a <strong><code>package</code></strong>. 通过功能组织类和接口的命名空间称为包。</p>
+</li>
+</ol>
+<br>
+<h2 id="二-程序阅读题">二、程序阅读题</h2>
+<br>
+<ol>
+<li>Consider the following code snippet.</li>
+</ol>
+<pre><code class="language-java">if (aNumber &gt;= 0)
+	    if (aNumber == 0)
+	        System.out.println(&quot;first string&quot;);
+else 
+		System.out.println(&quot;second string&quot;);
+System.out.println(&quot;third string&quot;);
+</code></pre>
+<p><b>a.   Exercise:	What output do you think the code will produce if aNumber is 3?</b></p>
+<blockquote>
+<p><strong>Solution:</strong></p>
+<p>​									<strong>second string</strong></p>
+<p>​									<strong>third string</strong></p>
+</blockquote>
+<br>
+<p><b>b.     Exercise:Use braces { and } to further clarify the code and reduce the possibility of<br>
+errors by future maintainers of the code.</b></p>
+<pre><code class="language-java">//Solution:
+if (aNumber &gt;= 0) {
+ if (aNumber == 0) {
+     System.out.println(&quot;first string&quot;);
+ } else {
+     System.out.println(&quot;second string&quot;);
+ }
+}
+System.out.println(&quot;third string&quot;);
+</code></pre>
+<br>
+<br>
+<ol start="2">
+<li>Consider the following class:</li>
+</ol>
+<pre><code class="language-java">public class IdentifyMyParts {
+	    public static int x = 7;
+	    public int y = 3;
+	} 
+</code></pre>
+<p><b>a.     Question: What are the class variables?</b></p>
+<blockquote>
+<p><strong>Answer: x</strong></p>
+</blockquote>
+<br>
+<p><b>b.     Question: What are the instance variables?</b></p>
+<blockquote>
+<p><strong>Answer: y</strong></p>
+</blockquote>
+<br>
+<p><b>c.      Question: What is the output from the following code:</b></p>
+<pre><code class="language-java">IdentifyMyParts a = new IdentifyMyParts(); 
+
+IdentifyMyParts b = new IdentifyMyParts(); 
+
+a.y = 5; 
+
+b.y = 6; 
+
+a.x = 1; 
+
+b.x = 2; 
+
+System.out.println(&quot;a.y = &quot; + a.y); 
+
+System.out.println(&quot;b.y = &quot; + b.y); 
+
+System.out.println(&quot;a.x = &quot; + a.x); 
+
+System.out.println(&quot;b.x = &quot; + b.x); 
+
+System.out.println(&quot;IdentifyMyParts.x = &quot; + IdentifyMyParts.x);
+</code></pre>
+<br>
+<pre><code class="language-java">//Answer: Here is the output:
+a.y = 5 
+b.y = 6 
+a.x = 2 
+b.x = 2
+IdentifyMyParts.x = 2
+</code></pre>
+<br>
+<br>
+<ol start="3">
+<li>What is wrong with the following interface?and fix the interface(固定接口)</li>
+</ol>
+<pre><code class="language-java">public interface SomethingIsWrong {
+    void aMethod(int aValue) {
+        System.out.println(&quot;Hi Mom&quot;);
+    }
+}
+</code></pre>
+<br>
+<pre><code class="language-java">//Answer : It has a method implementation in it. Only default and static methods have implementations.( 它有一个方法的实现。只有默认的静态方法的实现)
+
+public interface SomethingIsWrong {
+ void aMethod(int aValue);
+}
+//Alternatively, you can define aMethod as a default method:
+public interface SomethingIsWrong {
+ default void aMethod(int aValue) {
+     System.out.println(&quot;Hi Mom&quot;);
+ }
+}
+</code></pre>
+<br>
+<br>
+<ol start="4">
+<li>Question: Is there anything wrong with thisexception handler as written? Will this code compile?</li>
+</ol>
+<pre><code class="language-java">try {
+
+} catch (Exception e) {
+   
+} catch (ArithmeticException a) {
+    
+}
+</code></pre>
+<br>
+<blockquote>
+<p>Answer: This first handler catches exceptions of type Exception; therefore, it catches any exception, including ArithmeticException.The second handler could never be reached. This code will not compile. (这一处理程序捕获Exception型；因此，它捕获任何异常，包括ArithmeticException异常。第二个处理程序永远达不到。此代码将无法编译。)</p>
+</blockquote>
+<br>
+<br>
+<h2 id="三-编程题">三、编程题</h2>
+<ol>
+<li>Exercise 1. Write an example that counts the number of times a particular character, such as e, appears in a file. The character can be specified at the command line. You can use xanadu.txt as the input file.</li>
+</ol>
+<br>
+<pre><code class="language-java">import java.io.*;
+import java.nio.file.*;
+
+public class CountLetter {
+ private char lookFor;
+ private Path file;
+
+ CountLetter(char lookFor, Path file) {
+     this.lookFor = lookFor;
+     this.file = file;
+ }
+
+ public int count() throws IOException {
+     int count = 0;
+     try (InputStream in = Files.newInputStream(file);
+         BufferedReader reader = new BufferedReader(new InputStreamReader(in)))
+         {
+         String line = null;
+         while ((line = reader.readLine()) != null) {
+             for (int i = 0; i &lt; line.length(); i++) {
+                 if (lookFor == line.charAt(i)) {
+                     count++;
+                 }
+             }
+         }
+     } catch (IOException x) {
+         System.err.println(x);
+     }
+     return count;
+ }
+
+ static void usage() {
+     System.out.println(&quot;usage: java CountLetter &lt;letter&gt;&quot;);
+     System.exit(-1);
+ }
+
+ public static void main(String[] args) throws IOException {
+
+     if (args.length != 1 || args[0].length() != 1)
+         usage();
+
+     char lookFor = args[0].charAt(0);
+     Path file = Paths.get(&quot;xanadu.txt&quot;);
+     int count = new CountLetter(lookFor, file).count();
+     System.out.format(&quot;File '%s' has %d instances of letter '%c'.%n&quot;,
+             file, count, lookFor);
+ }
+}
+</code></pre>
+<br>
+<br>
+<ol start="2">
+<li>Write a test application that servers as a chat server (ip:192.168.1.1,port:8888), waiting for connection requests from multiple clients, the communication should be implemented with TCP protocol through multiple thread to dealing connections.</li>
+</ol>
+<br>
+<pre><code class="language-java">import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintStream;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+public class Serverlianxi {
+
+	public static void main(String[] args) {
+		try {
+			ServerSocket ssk = new ServerSocket(8888);
+			Socket socket = ssk.accept();
+			//绑定输入流
+			BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+			//绑定输出流
+			PrintStream ps = new PrintStream(socket.getOutputStream());
+			System.out.println(&quot;客户端发来信息给你：&quot;+br.readLine());
+			ps.println(&quot;你好呀！客户端，晚上好呀！&quot;);
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+}
+
+
+public class serversocketlianxi {
+
+	public static void main(String[] args) {
+		try {
+			Socket socket = new Socket(&quot;192.168.1.1&quot;,8888);
+			BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+			PrintStream ps = new PrintStream(socket.getOutputStream());
+			ps.println(&quot;晚上好呀！你在干嘛呢？&quot;);
+			System.out.println(&quot;服务器端发来信息：&quot;+br.readLine());
+			
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+
+}
+</code></pre>
+<br>
+<br>
+<ol start="3">
+<li>Write a program which should connect the database MISinfo at MySQL server 192.168.1.1:3306(root:123456)to retrieve all fields and records from table student, and iterate records with dynamic cursor.</li>
+</ol>
+<br>
+<pre><code class="language-java">import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class SQLConection {
+
+	private static String driver = &quot;com.microsoft.sqlserver.jdbc.SQLServerDriver&quot;; 
+private static String url =&quot;jdbc:sqlserver://192.168.1.1:3306\\123456;databasename=MISinfo &quot;;
+	private static String username=&quot;sa&quot;;
+	private static String password=&quot;123456&quot;;
+	private static Connection conn=null;
+	static{
+		try {
+			Class.forName(driver);
+			conn = DriverManager.getConnection(url,username,password);
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+		public static Connection openDB(){
+		try {
+						if(conn.isClosed()){
+				conn = DriverManager.getConnection(url,username,password);
+			}
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return conn;
+	}
+}
+</code></pre>
+<br>
+
+        </div>
+
+        
+
+
+        <div class="flex justify-between py-8">
+          
+
+          
+            <div class="next-post">
+              <a href="D:/UserData/Documents/Gridea/output/post/about/index.html">
+                <h3 class="post-title">
+                  关于
+                  <i class="remixicon-arrow-right-line"></i>
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+
+        
+
+      </div>
+    </div>
+
+    <script src="/media/prism.js"></script>  
+<script>
+
+Prism.highlightAll()
+
+let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+// This should probably be throttled.
+// Especially because it triggers during smooth scrolling.
+// https://lodash.com/docs/4.17.10#throttle
+// You could do like...
+// window.addEventListener("scroll", () => {
+//    _.throttle(doThatStuff, 100);
+// });
+// Only not doing it here to keep this Pen dependency-free.
+
+window.addEventListener("scroll", event => {
+  let fromTop = window.scrollY;
+
+  mainNavLinks.forEach((link, index) => {
+    let section = document.getElementById(decodeURI(link.hash).substring(1));
+    let nextSection = null
+    if (mainNavLinks[index + 1]) {
+      nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+    }
+    if (section.offsetTop <= fromTop) {
+      if (nextSection) {
+        if (nextSection.offsetTop > fromTop) {
+          link.classList.add("current");
+        } else {
+          link.classList.remove("current");    
+        }
+      } else {
+        link.classList.add("current");
+      }
+    } else {
+      link.classList.remove("current");
+    }
+  });
+});
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  var lazyImages = [].slice.call(document.querySelectorAll(".post-feature-image.lazy"));
+
+  if ("IntersectionObserver" in window) {
+    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          let lazyImage = entry.target
+          lazyImage.style.backgroundImage = `url(${lazyImage.dataset.bg})`
+          lazyImage.classList.remove("lazy")
+          lazyImageObserver.unobserve(lazyImage)
+        }
+      });
+    });
+
+    lazyImages.forEach(function(lazyImage) {
+      lazyImageObserver.observe(lazyImage)
+    })
+  } else {
+    // Possibly fall back to a more compatible method here
+  }
+});
+
+const menuContainer = document.querySelector('.menu-container')
+const menus = document.querySelectorAll('.menu-container .menu')
+const mask = document.querySelector('.mask')
+const contentWrapper = document.querySelector('.content-wrapper')
+const latestArticle = document.querySelector('.latest-article')
+const readMore = document.querySelector('.read-more')
+const indexPage = document.querySelector('.index-page')
+
+const isHome = location.pathname === '/'
+if (latestArticle) {
+  latestArticle.style.display = isHome ? 'block' : 'none'
+  readMore.style.display = isHome ? 'block' : 'none'
+  indexPage.style.display = isHome ? 'none' : 'block'
+}
+
+const openMenu = () => {
+  menuContainer.classList.add('open')
+  menus.forEach(menu => {
+    menu.classList.add('animated', 'fadeInLeft')
+  })
+  mask.classList.add('open')
+  contentWrapper.classList.add('is-second')
+}
+
+const closeMenu = () => {
+  menuContainer.classList.remove('open')
+  menus.forEach(menu => {
+    menu.classList.remove('animated', 'fadeInLeft')
+  })
+  mask.classList.remove('open')
+  contentWrapper.classList.remove('is-second')
+}
+</script>
+  
+  </body>
+</html>

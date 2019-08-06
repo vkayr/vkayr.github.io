@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>D:/UserData/Documents/Gridea/output</id>
+    <title>Gridea</title>
+    <updated>2019-08-06T04:31:08.895Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="D:/UserData/Documents/Gridea/output"/>
+    <link rel="self" href="D:/UserData/Documents/Gridea/output/atom.xml"/>
+    <subtitle>温故而知新</subtitle>
+    <logo>D:/UserData/Documents/Gridea/output/images/avatar.png</logo>
+    <icon>D:/UserData/Documents/Gridea/output/favicon.ico</icon>
+    <rights>All rights reserved 2019, Gridea</rights>
+    <entry>
+        <title type="html"><![CDATA[JAVA]]></title>
+        <id>D:/UserData/Documents/Gridea/output/post/java/index.html</id>
+        <link href="D:/UserData/Documents/Gridea/output/post/java/index.html">
+        </link>
+        <updated>2019-08-06T03:05:59.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="一-填空">一、填空</h2>
+<br>
+<ol>
+<li>
+<p>A software object's state is stored in  <strong><code>fields</code></strong>, it’s behavior is exposed through <strong><code>methods</code></strong>. 软件对象的状态存储在字段中。软件对象的行为是通过方法公开的。</p>
+</li>
+<li>
+<p>Common behavior can be defined in a <strong><code>superclass</code></strong> and inherited into a <strong><code>subclass</code></strong> using the <strong><code>extends</code></strong> keyword. 常见的行为可以在一个父类继承到子类的定义和使用extends关键字。</p>
+</li>
+<li>
+<p>A collection of methods with no implementation is called an <strong><code>interface</code>.</strong> 没有实现的方法集合称为接口。</p>
+</li>
+<li>
+<p>The term &quot;class variable&quot; is another name for <strong><code>static field</code></strong>.</p>
+</li>
+<li>
+<p>Operators may be used in building <strong><code>expressions</code></strong>, which compute values. 运算符可以用于构建表达式，该表达式计算值。</p>
+</li>
+<li>
+<p>The <strong><code>do-while</code></strong> statement is similar to the while statement, but evaluates its expression at the bottom of the loop.  do-while语句类似于while语句，但在循环的底部计算其表达式。</p>
+</li>
+<li>
+<p>A namespace that organizes classes and interfaces by functionality is called a <strong><code>package</code></strong>. 通过功能组织类和接口的命名空间称为包。</p>
+</li>
+</ol>
+<br>
+<h2 id="二-程序阅读题">二、程序阅读题</h2>
+<br>
+<ol>
+<li>Consider the following code snippet.</li>
+</ol>
+<pre><code class="language-java">if (aNumber &gt;= 0)
+	    if (aNumber == 0)
+	        System.out.println(&quot;first string&quot;);
+else 
+		System.out.println(&quot;second string&quot;);
+System.out.println(&quot;third string&quot;);
+</code></pre>
+<p><b>a.   Exercise:	What output do you think the code will produce if aNumber is 3?</b></p>
+<blockquote>
+<p><strong>Solution:</strong></p>
+<p>​									<strong>second string</strong></p>
+<p>​									<strong>third string</strong></p>
+</blockquote>
+<br>
+<p><b>b.     Exercise:Use braces { and } to further clarify the code and reduce the possibility of<br>
+errors by future maintainers of the code.</b></p>
+<pre><code class="language-java">//Solution:
+if (aNumber &gt;= 0) {
+ if (aNumber == 0) {
+     System.out.println(&quot;first string&quot;);
+ } else {
+     System.out.println(&quot;second string&quot;);
+ }
+}
+System.out.println(&quot;third string&quot;);
+</code></pre>
+<br>
+<br>
+<ol start="2">
+<li>Consider the following class:</li>
+</ol>
+<pre><code class="language-java">public class IdentifyMyParts {
+	    public static int x = 7;
+	    public int y = 3;
+	} 
+</code></pre>
+<p><b>a.     Question: What are the class variables?</b></p>
+<blockquote>
+<p><strong>Answer: x</strong></p>
+</blockquote>
+<br>
+<p><b>b.     Question: What are the instance variables?</b></p>
+<blockquote>
+<p><strong>Answer: y</strong></p>
+</blockquote>
+<br>
+<p><b>c.      Question: What is the output from the following code:</b></p>
+<pre><code class="language-java">IdentifyMyParts a = new IdentifyMyParts(); 
+
+IdentifyMyParts b = new IdentifyMyParts(); 
+
+a.y = 5; 
+
+b.y = 6; 
+
+a.x = 1; 
+
+b.x = 2; 
+
+System.out.println(&quot;a.y = &quot; + a.y); 
+
+System.out.println(&quot;b.y = &quot; + b.y); 
+
+System.out.println(&quot;a.x = &quot; + a.x); 
+
+System.out.println(&quot;b.x = &quot; + b.x); 
+
+System.out.println(&quot;IdentifyMyParts.x = &quot; + IdentifyMyParts.x);
+</code></pre>
+<br>
+<pre><code class="language-java">//Answer: Here is the output:
+a.y = 5 
+b.y = 6 
+a.x = 2 
+b.x = 2
+IdentifyMyParts.x = 2
+</code></pre>
+<br>
+<br>
+<ol start="3">
+<li>What is wrong with the following interface?and fix the interface(固定接口)</li>
+</ol>
+<pre><code class="language-java">public interface SomethingIsWrong {
+    void aMethod(int aValue) {
+        System.out.println(&quot;Hi Mom&quot;);
+    }
+}
+</code></pre>
+<br>
+<pre><code class="language-java">//Answer : It has a method implementation in it. Only default and static methods have implementations.( 它有一个方法的实现。只有默认的静态方法的实现)
+
+public interface SomethingIsWrong {
+ void aMethod(int aValue);
+}
+//Alternatively, you can define aMethod as a default method:
+public interface SomethingIsWrong {
+ default void aMethod(int aValue) {
+     System.out.println(&quot;Hi Mom&quot;);
+ }
+}
+</code></pre>
+<br>
+<br>
+<ol start="4">
+<li>Question: Is there anything wrong with thisexception handler as written? Will this code compile?</li>
+</ol>
+<pre><code class="language-java">try {
+
+} catch (Exception e) {
+   
+} catch (ArithmeticException a) {
+    
+}
+</code></pre>
+<br>
+<blockquote>
+<p>Answer: This first handler catches exceptions of type Exception; therefore, it catches any exception, including ArithmeticException.The second handler could never be reached. This code will not compile. (这一处理程序捕获Exception型；因此，它捕获任何异常，包括ArithmeticException异常。第二个处理程序永远达不到。此代码将无法编译。)</p>
+</blockquote>
+<br>
+<br>
+<h2 id="三-编程题">三、编程题</h2>
+<ol>
+<li>Exercise 1. Write an example that counts the number of times a particular character, such as e, appears in a file. The character can be specified at the command line. You can use xanadu.txt as the input file.</li>
+</ol>
+<br>
+<pre><code class="language-java">import java.io.*;
+import java.nio.file.*;
+
+public class CountLetter {
+ private char lookFor;
+ private Path file;
+
+ CountLetter(char lookFor, Path file) {
+     this.lookFor = lookFor;
+     this.file = file;
+ }
+
+ public int count() throws IOException {
+     int count = 0;
+     try (InputStream in = Files.newInputStream(file);
+         BufferedReader reader = new BufferedReader(new InputStreamReader(in)))
+         {
+         String line = null;
+         while ((line = reader.readLine()) != null) {
+             for (int i = 0; i &lt; line.length(); i++) {
+                 if (lookFor == line.charAt(i)) {
+                     count++;
+                 }
+             }
+         }
+     } catch (IOException x) {
+         System.err.println(x);
+     }
+     return count;
+ }
+
+ static void usage() {
+     System.out.println(&quot;usage: java CountLetter &lt;letter&gt;&quot;);
+     System.exit(-1);
+ }
+
+ public static void main(String[] args) throws IOException {
+
+     if (args.length != 1 || args[0].length() != 1)
+         usage();
+
+     char lookFor = args[0].charAt(0);
+     Path file = Paths.get(&quot;xanadu.txt&quot;);
+     int count = new CountLetter(lookFor, file).count();
+     System.out.format(&quot;File '%s' has %d instances of letter '%c'.%n&quot;,
+             file, count, lookFor);
+ }
+}
+</code></pre>
+<br>
+<br>
+<ol start="2">
+<li>Write a test application that servers as a chat server (ip:192.168.1.1,port:8888), waiting for connection requests from multiple clients, the communication should be implemented with TCP protocol through multiple thread to dealing connections.</li>
+</ol>
+<br>
+<pre><code class="language-java">import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintStream;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+public class Serverlianxi {
+
+	public static void main(String[] args) {
+		try {
+			ServerSocket ssk = new ServerSocket(8888);
+			Socket socket = ssk.accept();
+			//绑定输入流
+			BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+			//绑定输出流
+			PrintStream ps = new PrintStream(socket.getOutputStream());
+			System.out.println(&quot;客户端发来信息给你：&quot;+br.readLine());
+			ps.println(&quot;你好呀！客户端，晚上好呀！&quot;);
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+}
+
+
+public class serversocketlianxi {
+
+	public static void main(String[] args) {
+		try {
+			Socket socket = new Socket(&quot;192.168.1.1&quot;,8888);
+			BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+			PrintStream ps = new PrintStream(socket.getOutputStream());
+			ps.println(&quot;晚上好呀！你在干嘛呢？&quot;);
+			System.out.println(&quot;服务器端发来信息：&quot;+br.readLine());
+			
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+
+}
+</code></pre>
+<br>
+<br>
+<ol start="3">
+<li>Write a program which should connect the database MISinfo at MySQL server 192.168.1.1:3306(root:123456)to retrieve all fields and records from table student, and iterate records with dynamic cursor.</li>
+</ol>
+<br>
+<pre><code class="language-java">import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class SQLConection {
+
+	private static String driver = &quot;com.microsoft.sqlserver.jdbc.SQLServerDriver&quot;; 
+private static String url =&quot;jdbc:sqlserver://192.168.1.1:3306\\123456;databasename=MISinfo &quot;;
+	private static String username=&quot;sa&quot;;
+	private static String password=&quot;123456&quot;;
+	private static Connection conn=null;
+	static{
+		try {
+			Class.forName(driver);
+			conn = DriverManager.getConnection(url,username,password);
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+		public static Connection openDB(){
+		try {
+						if(conn.isClosed()){
+				conn = DriverManager.getConnection(url,username,password);
+			}
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return conn;
+	}
+}
+</code></pre>
+<br>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[关于]]></title>
+        <id>D:/UserData/Documents/Gridea/output/post/about/index.html</id>
+        <link href="D:/UserData/Documents/Gridea/output/post/about/index.html">
+        </link>
+        <updated>2019-01-25T11:09:48.000Z</updated>
+        <content type="html"><![CDATA[<p>这是关于的页面，可以在这里向世界介绍你！</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Hello Gridea]]></title>
+        <id>D:/UserData/Documents/Gridea/output/post/hello-gridea/index.html</id>
+        <link href="D:/UserData/Documents/Gridea/output/post/hello-gridea/index.html">
+        </link>
+        <updated>2018-12-11T16:00:00.000Z</updated>
+        <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
+✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
+✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
+<!-- more -->
+<p><a href="https://github.com/getgridea/gridea">Github</a><br>
+<a href="http://hvenotes.fehey.com/">Gridea 主页</a><br>
+<a href="http://fehey.com/">示例网站</a></p>
+<h2 id="特性">特性👇</h2>
+<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
+<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
+<p>🏷️  你可以对文章进行标签分组</p>
+<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
+<p>💻  你可以在 <strong>𝖶𝗂𝗇𝖽𝗈𝗐𝗌</strong> 或 <strong>𝖬𝖺𝖼𝖮𝖲</strong> 设备上使用此客户端</p>
+<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
+<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
+<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
+<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
+<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
+<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前🏃</p>
+<p>未来，它一定会成为你离不开的伙伴</p>
+<p>尽情发挥你的才华吧！</p>
+<p>😘 Enjoy~</p>
+]]></content>
+    </entry>
+</feed>
