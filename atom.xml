@@ -1,15 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://vkayr.github.io</id>
+    <id>https://vkayr.github.io/</id>
     <title>Gridea</title>
-    <updated>2019-08-06T08:24:25.568Z</updated>
+    <updated>2020-01-19T03:13:09.689Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://vkayr.github.io"/>
+    <link rel="alternate" href="https://vkayr.github.io/"/>
     <link rel="self" href="https://vkayr.github.io/atom.xml"/>
     <subtitle>温故而知新</subtitle>
     <logo>https://vkayr.github.io/images/avatar.png</logo>
     <icon>https://vkayr.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2019, Gridea</rights>
+    <rights>All rights reserved 2020, Gridea</rights>
+    <entry>
+        <title type="html"><![CDATA[tteesstt]]></title>
+        <id>https://vkayr.github.io/post/tteesstt</id>
+        <link href="https://vkayr.github.io/post/tteesstt">
+        </link>
+        <updated>2020-01-18T13:46:06.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="test">test</h3>
+<figure data-type="image" tabindex="1"><img src="https://vkayr.github.io//post-images/1579355176022.jpg" alt="" loading="lazy"></figure>
+<p>This is a test.</p>
+<h2 id="another-test">Another test</h2>
+<figure data-type="image" tabindex="2"><img src="https://vkayr.github.io//post-images/1579355356757.jpg" alt="" loading="lazy"></figure>
+<pre><code class="language-java">@Select(&quot;select * from user&quot;)
+@Results(id = &quot;userMap&quot;,value = {
+        @Result(id = true,property = &quot;&quot;,column = &quot;&quot;),
+        @Result(id = true,property = &quot;&quot;,column = &quot;&quot;),
+        @Result(id = true,property = &quot;&quot;,column = &quot;&quot;),
+        @Result(id = true,property = &quot;&quot;,column = &quot;&quot;),
+})
+List&lt;User&gt; findAll();
+
+@Select(&quot;select * from user where id = #{id}&quot;)
+@ResultMap(value = {&quot;userMap&quot;})
+User findById(Integer id);
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[JAVA]]></title>
         <id>https://vkayr.github.io/post/java</id>

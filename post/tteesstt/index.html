@@ -38,7 +38,19 @@
             文章目录
           </p>
           <div class="toc-container hidden lg:block">
-            
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#test">test</a></li>
+</ul>
+</li>
+<li><a href="#another-test">Another test</a></li>
+</ul>
+</li>
+</ul>
+
           </div>
         </div>
       
@@ -83,13 +95,30 @@
 <div class="mask" onclick="closeMenu()">
 </div>
       <div class="content-wrapper py-32 lg:p-8 lg:w-3/4 post-detail animated fadeIn">
-        <h1 class="text-3xl font-bold lg:mt-16">关于</h1>
+        <h1 class="text-3xl font-bold lg:mt-16">tteesstt</h1>
         <div class="text-sm text-gray-700 lg:my-8">
-          2019-01-25 / 1 min read
+          2020-01-18 / 1 min read
         </div>
         
         <div class="post-content yue">
-          <p>这是关于的页面，可以在这里向世界介绍你！</p>
+          <h3 id="test">test</h3>
+<figure data-type="image" tabindex="1"><img src="https://vkayr.github.io//post-images/1579355176022.jpg" alt="" loading="lazy"></figure>
+<p>This is a test.</p>
+<h2 id="another-test">Another test</h2>
+<figure data-type="image" tabindex="2"><img src="https://vkayr.github.io//post-images/1579355356757.jpg" alt="" loading="lazy"></figure>
+<pre><code class="language-java">@Select(&quot;select * from user&quot;)
+@Results(id = &quot;userMap&quot;,value = {
+        @Result(id = true,property = &quot;&quot;,column = &quot;&quot;),
+        @Result(id = true,property = &quot;&quot;,column = &quot;&quot;),
+        @Result(id = true,property = &quot;&quot;,column = &quot;&quot;),
+        @Result(id = true,property = &quot;&quot;,column = &quot;&quot;),
+})
+List&lt;User&gt; findAll();
+
+@Select(&quot;select * from user where id = #{id}&quot;)
+@ResultMap(value = {&quot;userMap&quot;})
+User findById(Integer id);
+</code></pre>
 
         </div>
 
@@ -98,21 +127,12 @@
 
         <div class="flex justify-between py-8">
           
-            <div class="prev-post">
-              <a href="https://vkayr.github.io/post/java">
-                <h3 class="post-title">
-                  <i class="remixicon-arrow-left-line"></i>
-                  JAVA
-                </h3>
-              </a>
-            </div>
-          
 
           
             <div class="next-post">
-              <a href="https://vkayr.github.io/post/hello-gridea">
+              <a href="https://vkayr.github.io/post/java">
                 <h3 class="post-title">
-                  Hello Gridea
+                  JAVA
                   <i class="remixicon-arrow-right-line"></i>
                 </h3>
               </a>
