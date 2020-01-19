@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://kayr.coding.me/kayr/</id>
+    <id>https://vkayr.github.io/</id>
     <title>Kayr</title>
-    <updated>2020-01-19T04:43:30.907Z</updated>
+    <updated>2020-01-19T04:46:44.235Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://kayr.coding.me/kayr/"/>
-    <link rel="self" href="https://kayr.coding.me/kayr/atom.xml"/>
-    <logo>https://kayr.coding.me/kayr/images/avatar.png</logo>
-    <icon>https://kayr.coding.me/kayr/favicon.ico</icon>
+    <link rel="alternate" href="https://vkayr.github.io/"/>
+    <link rel="self" href="https://vkayr.github.io/atom.xml"/>
+    <logo>https://vkayr.github.io/images/avatar.png</logo>
+    <icon>https://vkayr.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Kayr</rights>
     <entry>
         <title type="html"><![CDATA[tteesstt]]></title>
-        <id>https://kayr.coding.me/kayr/post/tteesstt</id>
-        <link href="https://kayr.coding.me/kayr/post/tteesstt">
+        <id>https://vkayr.github.io/post/tteesstt</id>
+        <link href="https://vkayr.github.io/post/tteesstt">
         </link>
         <updated>2020-01-18T13:46:06.000Z</updated>
         <content type="html"><![CDATA[<h3 id="test">test</h3>
-<figure data-type="image" tabindex="1"><img src="https://kayr.coding.me/kayr//post-images/1579355176022.jpg" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="1"><img src="https://vkayr.github.io//post-images/1579355176022.jpg" alt="" loading="lazy"></figure>
 <p>This is a test.</p>
 <h2 id="another-test">Another test</h2>
-<figure data-type="image" tabindex="2"><img src="https://kayr.coding.me/kayr//post-images/1579355356757.jpg" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="2"><img src="https://vkayr.github.io//post-images/1579355356757.jpg" alt="" loading="lazy"></figure>
 <pre><code class="language-java">@Select(&quot;select * from user&quot;)
 @Results(id = &quot;userMap&quot;,value = {
         @Result(id = true,property = &quot;&quot;,column = &quot;&quot;),
@@ -86,8 +86,8 @@ public class CountLetter {
     </entry>
     <entry>
         <title type="html"><![CDATA[JAVA]]></title>
-        <id>https://kayr.coding.me/kayr/post/java</id>
-        <link href="https://kayr.coding.me/kayr/post/java">
+        <id>https://vkayr.github.io/post/java</id>
+        <link href="https://vkayr.github.io/post/java">
         </link>
         <updated>2019-08-06T03:05:59.000Z</updated>
         <content type="html"><![CDATA[<h2 id="一-填空">一、填空</h2>
@@ -394,8 +394,8 @@ private static String url =&quot;jdbc:sqlserver://192.168.1.1:3306\\123456;datab
     </entry>
     <entry>
         <title type="html"><![CDATA[关于]]></title>
-        <id>https://kayr.coding.me/kayr/post/about</id>
-        <link href="https://kayr.coding.me/kayr/post/about">
+        <id>https://vkayr.github.io/post/about</id>
+        <link href="https://vkayr.github.io/post/about">
         </link>
         <updated>2019-01-25T11:09:48.000Z</updated>
         <content type="html"><![CDATA[<p>这是关于的页面，可以在这里向世界介绍你！</p>
