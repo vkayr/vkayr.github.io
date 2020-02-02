@@ -38,30 +38,20 @@
       
         <div class="animated fadeInLeft" style="animation-delay: 0.4s">
           <p class="my-4 text-gray-600 font-light hidden lg:block">
-            
+            文章目录
           </p>
-          <div class="animated fadeInLeft social-container hidden lg:block" style="animation-delay: 0.6s">
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
-              
-            
+          <div class="toc-container hidden lg:block">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E5%B7%A6%E5%8F%B3%E5%AE%BD%E5%BA%A6">左右宽度</a></li>
+<li><a href="#%E4%BB%A3%E7%A0%81%E9%AB%98%E4%BA%AE">代码高亮</a></li>
+<li><a href="#%E5%B0%8F%E4%BF%AE%E6%94%B9">小修改</a></li>
+<li><a href="#%E4%BE%A7%E8%BE%B9%E6%A0%8F%E5%A4%B4%E5%83%8F%E8%B0%83%E6%95%B4">侧边栏头像调整</a></li>
+</ul>
+</li>
+</ul>
+
           </div>
         </div>
       
@@ -105,35 +95,46 @@
 </div>
 <div class="mask" onclick="closeMenu()">
 </div>
-      <div class="content-wrapper py-32 lg:p-8 lg:w-3/4">
-        <h2 class="text-lg text-gray-700 mb-8">
-          <i class="remixicon-bookmark-line"></i> Gridea
-        </h2>
-        
-  <section class="post-item md:flex pb-12 animated fadeIn" :style="{ 'animation-delay': `${0 * 0.2}s` }">
-    
-      <a href="https://vkayr.github.io/post/hello-gridea" class="feature-image-wrapper bg-gray-100 rounded-lg flex-shrink-0 mr-8 w-full h-56 h-32 md:w-56 md:h-40">
-        <div class="post-feature-image lazy w-full h-56 h-32 md:w-56 md:h-40" data-bg="'https://vkayr.github.io//post-images/hello-gridea.png'">
+      <div class="content-wrapper py-32 lg:p-8 lg:w-5/6 post-detail animated fadeIn">
+        <h1 class="text-3xl font-bold lg:mt-16">主题自定义</h1>
+        <div class="text-sm text-gray-700 lg:my-8">
+          2020-01-19 / 1 min read
         </div>
-      </a>
-    
-    <div class="content">
-      <a href="https://vkayr.github.io/post/hello-gridea">
-        <h2 class="post-title text-xl font-extrabold mt-5 md:mt-0">Hello Gridea</h2>
-      </a>
-      <div class="post-abstract text-gray-700 font-light my-4">
-        <p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
+        
+        <div class="post-content yue">
+          <h2 id="左右宽度">左右宽度</h2>
+<p>在<code>main.less</code>中修改总体宽度，由1200px改为1300px</p>
+<pre><code class="language-css">.main {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+</code></pre>
+<p>在<code>sidebar.ejs</code>修改侧边栏占比，由1/4改为1/6</p>
+<pre><code class="language-html">&lt;div id=&quot;sidebar&quot; class=&quot;sidebar-wrapper lg:static lg:w-1/6&quot;&gt;
+</code></pre>
+<p>在<code>post.ejs</code>修改主内容占比，由3/4改为5/6</p>
+<pre><code class="language-html">&lt;div class=&quot;content-wrapper py-32 lg:p-8 lg:w-5/6 post-detail animate fadeIn&quot;&gt;
+</code></pre>
+<h2 id="代码高亮">代码高亮</h2>
+<p>原主题使用的就是prism，所以去prism.js官网下载js文件和想要的主题css文件进行替换。<br>
+在main.less中搜索对应的css文件内容进行替换即可</p>
+<h2 id="小修改">小修改</h2>
+<p>修改完以上后，发现并不像官网样式那样。F12开发者工具对准代码区，发现了yue.css中部分代码影响了代码显示，注释即可。</p>
+<h2 id="侧边栏头像调整">侧边栏头像调整</h2>
+<p>在sidebar.ejs中操作相关内容</p>
 
-      </div>
-      <div class="text-gray-400 text-sm font-light">2018-12-12 / 2 min read</div>
-    </div>
-  </section>
+        </div>
 
-        <div class="pagination-container animated fadeIn">
-  
-  
-</div>
+        
+
+
+        <div class="flex justify-between py-8">
+          
+
+          
+        </div>
+
+        
 
       </div>
     </div>

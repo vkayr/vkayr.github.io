@@ -1,0 +1,481 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Kayr</title>
+<meta name="description" content="" />
+<link rel="shortcut icon" href="https://vkayr.github.io//favicon.ico?v=1580652502372">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
+<!-- <link href="http://cdn.bootcss.com/highlight.js/8.0/styles/monokai_sublime.min.css" rel="stylesheet">  
+<script src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>  
+<script >hljs.initHighlightingOnLoad();</script>   -->
+<script src="/assets/media/prism.js"></script>
+
+<link rel="stylesheet" href="https://vkayr.github.io//styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="Kayr - Atom Feed" href="https://vkayr.github.io//atom.xml">
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main px-4 flex flex-col lg:flex-row">
+      <div id="sidebar" class="sidebar-wrapper lg:static lg:w-1/6">
+  <div class="lg:sticky top-0">
+    <div class="sidebar-content">
+      <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
+        <i class="remixicon-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
+        <a href="https://vkayr.github.io/">
+          <!-- <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://vkayr.github.io//images/avatar.png?v=1580652502372" alt=""> -->
+          <img class="animated fadeInLeft avatar rounded-lg mx-4  lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://vkayr.github.io//images/avatar.png?v=1580652502372" alt="">
+        </a>
+        <!-- <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">Kayr</h1> -->
+        <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-0 text-xl" style="animation-delay: 0.2s">Kayr</h1>
+      </div>
+      
+        <div class="animated fadeInLeft" style="animation-delay: 0.4s">
+          <p class="my-4 text-gray-600 font-light hidden lg:block">
+            文章目录
+          </p>
+          <div class="toc-container hidden lg:block">
+            <ul class="markdownIt-TOC">
+<li><a href="#%E5%88%86%E7%B1%BB%E4%B8%BE%E4%BE%8B">分类+举例</a></li>
+<li><a href="#%E4%B8%80%E5%AF%B9%E4%B8%80">一对一</a>
+<ul>
+<li><a href="#%E6%9F%A5%E8%AF%A2%E6%89%80%E6%9C%89%E8%B4%A6%E6%88%B7%E5%B9%B6%E8%BF%94%E5%9B%9E%E7%94%A8%E6%88%B7%E5%90%8D%E5%9C%B0%E5%9D%80">查询所有账户并返回用户名地址</a></li>
+<li><a href="#%E6%9F%A5%E8%AF%A2%E6%89%80%E6%9C%89%E8%B4%A6%E6%88%B7%E5%B9%B6%E8%BF%94%E5%9B%9E%E6%89%80%E5%B1%9E%E7%94%A8%E6%88%B7%E6%89%80%E6%9C%89%E4%BF%A1%E6%81%AF">查询所有账户并返回所属用户所有信息</a></li>
+</ul>
+</li>
+<li><a href="#%E4%B8%80%E5%AF%B9%E5%A4%9A">一对多</a>
+<ul>
+<li><a href="#%E6%9F%A5%E8%AF%A2%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF%E4%BB%A5%E5%8F%8A%E5%85%B3%E8%81%94%E8%B4%A6%E6%88%B7%E4%BF%A1%E6%81%AF">查询用户信息以及关联账户信息</a></li>
+</ul>
+</li>
+<li><a href="#%E5%A4%9A%E5%AF%B9%E5%A4%9A">多对多</a></li>
+</ul>
+
+          </div>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+<div class="menu-container">
+  <i class="remixicon-arrow-left-line text-2xl cursor-pointer animated fadeIn close-menu-btn" onclick="closeMenu()"></i>
+  <div>
+    
+      
+        <a href="/" class="menu" style="animation-delay: 0s">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu" style="animation-delay: 0.2s">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu" style="animation-delay: 0.4s">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu" style="animation-delay: 0.6000000000000001s">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="site-footer">
+    <div class="py-4 text-gray-700"></div>
+    <a class="rss" href="https://vkayr.github.io//atom.xml" target="_blank">RSS</a>
+  </div>
+</div>
+<div class="mask" onclick="closeMenu()">
+</div>
+      <div class="content-wrapper py-32 lg:p-8 lg:w-5/6 post-detail animated fadeIn">
+        <h1 class="text-3xl font-bold lg:mt-16">Mybatis03--多表查询</h1>
+        <div class="text-sm text-gray-700 lg:my-8">
+          2020-01-25 / 7 min read
+        </div>
+        
+        <div class="post-content yue">
+          <h1 id="分类举例">分类+举例</h1>
+<p>一对多<br>
+多对一<br>
+一对一<br>
+多对多</p>
+<p>特例：</p>
+<p>如果拿出每一个订单，他都只能属于一个用户。所以Mybatis就把多对一看成了一对一。</p>
+<h1 id="一对一">一对一</h1>
+<p>一个账户对应一个用户</p>
+<h2 id="查询所有账户并返回用户名地址">查询所有账户并返回用户名地址</h2>
+<p>最简单的方法是定义专门的po类(定义了查询的所有字段)</p>
+<ol>
+<li>新建一个AccountUser类，继承Account类</li>
+</ol>
+<pre><code class="language-java">public class AccountUser extends Account {
+    private String username;
+    private String address;
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + &quot;     AccountUser{&quot; +
+                &quot;username='&quot; + username + '\'' +
+                &quot;, address='&quot; + address + '\'' +
+                '}';
+    }
+}
+</code></pre>
+<ol start="2">
+<li>定义账户持久层接口IAccountDao.java</li>
+</ol>
+<pre><code class="language-java">public interface IAccountDao {
+
+    /**
+     * 查询所有账户，并且带有用户名和地址
+     * @return
+     */
+    List&lt;AccountUser&gt; findAllAccount();
+}
+</code></pre>
+<ol start="3">
+<li>定义IAccountDao.xml查询配置信息</li>
+</ol>
+<pre><code class="language-xml">    &lt;!--配置查询查询所有账户，并返回用户名地址--&gt;
+    &lt;select id=&quot;findAllAccount&quot; resultType=&quot;AccountUser&quot;&gt;
+        select a.*,u.username,u.address from account	a,user u where a.UID = u.id
+    &lt;/select&gt;
+</code></pre>
+<ol start="4">
+<li>创建AccountTest测试类</li>
+</ol>
+<pre><code class="language-java">public class AccountTest {
+    private InputStream in;
+    private SqlSession session;
+    private IAccountDao accountDao;
+
+    @Before
+    public void init() throws Exception{
+        in = Resources.getResourceAsStream(&quot;SqlMapConfig.xml&quot;);
+        SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(in);
+        session = factory.openSession();
+        accountDao = session.getMapper(IAccountDao.class);
+    }
+
+    @After
+    public void destory() throws IOException {
+        session.commit();
+        session.close();
+        in.close();
+    }
+
+
+    /**
+     * 测试查询所有账户并返回用户名和地址
+     */
+    @Test
+    public void findAllAccountTest() throws IOException {
+        List&lt;AccountUser&gt; aus = accountDao.findAllAccount();
+        for (AccountUser au : aus) {
+            System.out.println(au);
+        }
+
+    }
+}
+</code></pre>
+<p>查询结果<br>
+<img src="https://vkayr.github.io//post-images/1580615232062.png" alt="查询结果" loading="lazy"></p>
+<h2 id="查询所有账户并返回所属用户所有信息">查询所有账户并返回所属用户所有信息</h2>
+<ol>
+<li>修改Account实体类</li>
+</ol>
+<p>account实体类中建立与user的联系</p>
+<pre><code class="language-java">public class Account implements Serializable {
+    private int id;
+    private int uid;
+    private double money;
+
+    //从表实体应该包含一个主表实体的对象引用
+    private User user;
+
+    //以及各自对应的get,set,toString方法
+}
+</code></pre>
+<ol start="2">
+<li>修改IAccountDao.xml中查询配置信息</li>
+</ol>
+<p>使用resultMap来映射一对一的查询结果，其中使用association标签表明一对一关系映射，用于封装user</p>
+<pre><code class="language-xml">&lt;resultMap id=&quot;AccountUserMap&quot; type=&quot;account&quot;&gt;
+        &lt;id column=&quot;aid&quot; property=&quot;id&quot;/&gt;
+        &lt;result column=&quot;uid&quot; property=&quot;uid&quot;/&gt;
+        &lt;result column=&quot;money&quot; property=&quot;money&quot;/&gt;
+        &lt;!-- 一对一的关系映射：配置封装user的内容--&gt;
+        &lt;association property=&quot;user&quot;  column=&quot;uid&quot; javaType=&quot;user&quot;&gt;
+            &lt;id column=&quot;id&quot; property=&quot;id&quot;/&gt;
+            &lt;result column=&quot;username&quot; property=&quot;username&quot;/&gt;
+            &lt;result column=&quot;birthday&quot; property=&quot;birthday&quot;/&gt;
+            &lt;result column=&quot;sex&quot; property=&quot;sex&quot;/&gt;
+            &lt;result column=&quot;address&quot; property=&quot;address&quot;/&gt;
+        &lt;/association&gt;
+&lt;/resultMap&gt;
+
+&lt;!--配置查询所有--&gt;
+&lt;select id=&quot;findAll&quot; resultType=&quot;Account&quot; resultMap=&quot;AccountMap&quot;&gt;
+    select a.id as aid,a.UID,a.MONEY,u.* from account a,user u where a.UID = u.id
+&lt;/select&gt;
+</code></pre>
+<ol start="3">
+<li>编写测试方法</li>
+</ol>
+<pre><code class="language-java">    /**
+    * 测试查询所有账户并返回对应用户信息
+    */
+@Test
+public void findAllTest() throws IOException {
+    List&lt;Account&gt; accounts = accountDao.findAll();
+    for (Account account : accounts) {
+        System.out.println(&quot;--------每个account的信息------------&quot;);
+        System.out.println(account);
+        System.out.println(account.getUser());
+    }
+}
+</code></pre>
+<p>查询结果<br>
+<img src="https://vkayr.github.io//post-images/1580634731604.png" alt="" loading="lazy"></p>
+<h1 id="一对多">一对多</h1>
+<h2 id="查询用户信息以及关联账户信息">查询用户信息以及关联账户信息</h2>
+<p>一个用户对应多个账户</p>
+<p>需求：查询所有用户信息，同时查询出关联的账户信息</p>
+<ol>
+<li>编写SQL语句</li>
+</ol>
+<pre><code class="language-sql">SELECT * FROM USER u LEFT JOIN account a ON u.id=a.UID
+</code></pre>
+<p>查询结果</p>
+<pre><code class="language-sql">+----+----------+---------------------+-----+---------+------+------+-------+
+| id | username | birthday            | sex | address | ID   | UID  | MONEY |
++----+----------+---------------------+-----+---------+------+------+-------+
+| 46 | 老王     | 2018-03-07 17:37:26 | 男  | 北京    |    1 |   46 |  1000 |
+| 45 | 小张     | 2018-03-04 12:04:06 | 男  | 上海    |    2 |   45 |  1000 |
+| 46 | 老王     | 2018-03-07 17:37:26 | 男  | 北京    |    3 |   46 |  2000 |
+| 41 | 老王     | 2018-02-27 17:47:08 | 男  | 北京    | NULL | NULL | NULL  |
+| 42 | 小二王   | 2018-03-02 15:09:37 | 女  | 上海    | NULL | NULL | NULL  |
+| 43 | 小二王   | 2018-03-04 11:34:34 | 女  | 广州    | NULL | NULL | NULL  |
+| 48 | 张三     | 2018-03-08 11:44:00 | 女  | 广州    | NULL | NULL | NULL  |
++----+----------+---------------------+-----+---------+------+------+-------+
+</code></pre>
+<ol start="2">
+<li>修改User实体类</li>
+</ol>
+<p>user类中关联account集合，主表实体包含从表实体的集合引用</p>
+<pre><code class="language-java">public class User implements Serializable {
+    private Integer id;
+    private String username;
+    private Date birthday;
+    private String sex;
+    private String address;
+
+    //一对多关系映射：主表实体应该包含从表实体的集合引用
+    private List&lt;Account&gt; accounts;
+
+    //以及各自的get,set,toString方法
+}
+</code></pre>
+<ol start="3">
+<li>持久层接口IUserDao添加查询方法</li>
+</ol>
+<pre><code class="language-java">public interface IUserDao {
+    /**
+     * 查询所有用户，同时获取出每个用户下的所有账户信息
+     * @return
+     */
+    List&lt;User&gt; findAll();
+}
+</code></pre>
+<ol start="4">
+<li>映射配置信息IUserDao.xml</li>
+</ol>
+<pre><code class="language-xml">&lt;resultMap id=&quot;userAccountMap&quot; type=&quot;user&quot;&gt;
+        &lt;id property=&quot;id&quot; column=&quot;id&quot;/&gt;
+        &lt;result property=&quot;username&quot; column=&quot;username&quot;/&gt;
+        &lt;result property=&quot;birthday&quot; column=&quot;birthday&quot;/&gt;
+        &lt;result property=&quot;sex&quot; column=&quot;sex&quot;/&gt;
+        &lt;result property=&quot;address&quot; column=&quot;address&quot;/&gt;
+        &lt;!--配置user对象中accounts集合的映射--&gt;
+        &lt;collection property=&quot;accounts&quot; ofType=&quot;account&quot;&gt;
+            &lt;id column=&quot;aid&quot; property=&quot;id&quot;/&gt;
+            &lt;result column=&quot;uid&quot; property=&quot;uid&quot;/&gt;
+            &lt;result column=&quot;money&quot; property=&quot;money&quot;/&gt;
+        &lt;/collection&gt;
+    &lt;/resultMap&gt;
+
+    &lt;select id=&quot;findAll&quot; resultMap=&quot;userAccountMap&quot;&gt;
+        SELECT u.*,a.ID AS aid,a.UID,a.MONEY FROM USER u LEFT JOIN account a ON u.id=a.UID
+    &lt;/select&gt;
+</code></pre>
+<pre><code>5. 编写测试方法
+</code></pre>
+<pre><code class="language-java">    @Test
+    public void findAllTest() throws IOException {
+        List&lt;User&gt; users = userDao.findAll();
+        for (User user : users) {
+            System.out.println(&quot;-----每个用户的信息------&quot;);
+            System.out.println(user);
+            System.out.println(user.getAccounts());
+        }
+    }
+</code></pre>
+<p>查询结果</p>
+<figure data-type="image" tabindex="1"><img src="https://vkayr.github.io//post-images/1580650143666.png" alt="" loading="lazy"></figure>
+<h1 id="多对多">多对多</h1>
+
+        </div>
+
+        
+
+
+        <div class="flex justify-between py-8">
+          
+
+          
+            <div class="next-post">
+              <a href="https://vkayr.github.io/post/2IXgot2ol">
+                <h3 class="post-title">
+                  Mybatis01--介绍与快速入门
+                  <i class="remixicon-arrow-right-line"></i>
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+
+        
+
+      </div>
+    </div>
+
+    <script src="https://vkayr.github.io//media/prism.js"></script>  
+<script>
+
+Prism.highlightAll()
+
+let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+// This should probably be throttled.
+// Especially because it triggers during smooth scrolling.
+// https://lodash.com/docs/4.17.10#throttle
+// You could do like...
+// window.addEventListener("scroll", () => {
+//    _.throttle(doThatStuff, 100);
+// });
+// Only not doing it here to keep this Pen dependency-free.
+
+window.addEventListener("scroll", event => {
+  let fromTop = window.scrollY;
+
+  mainNavLinks.forEach((link, index) => {
+    let section = document.getElementById(decodeURI(link.hash).substring(1));
+    let nextSection = null
+    if (mainNavLinks[index + 1]) {
+      nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+    }
+    if (section.offsetTop <= fromTop) {
+      if (nextSection) {
+        if (nextSection.offsetTop > fromTop) {
+          link.classList.add("current");
+        } else {
+          link.classList.remove("current");    
+        }
+      } else {
+        link.classList.add("current");
+      }
+    } else {
+      link.classList.remove("current");
+    }
+  });
+});
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  var lazyImages = [].slice.call(document.querySelectorAll(".post-feature-image.lazy"));
+
+  if ("IntersectionObserver" in window) {
+    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          let lazyImage = entry.target
+          lazyImage.style.backgroundImage = `url(${lazyImage.dataset.bg})`
+          lazyImage.classList.remove("lazy")
+          lazyImageObserver.unobserve(lazyImage)
+        }
+      });
+    });
+
+    lazyImages.forEach(function(lazyImage) {
+      lazyImageObserver.observe(lazyImage)
+    })
+  } else {
+    // Possibly fall back to a more compatible method here
+  }
+});
+
+const menuContainer = document.querySelector('.menu-container')
+const menus = document.querySelectorAll('.menu-container .menu')
+const mask = document.querySelector('.mask')
+const contentWrapper = document.querySelector('.content-wrapper')
+const latestArticle = document.querySelector('.latest-article')
+const readMore = document.querySelector('.read-more')
+const indexPage = document.querySelector('.index-page')
+
+const isHome = location.pathname === '/'
+if (latestArticle) {
+  latestArticle.style.display = isHome ? 'block' : 'none'
+  readMore.style.display = isHome ? 'block' : 'none'
+  indexPage.style.display = isHome ? 'none' : 'block'
+}
+
+const openMenu = () => {
+  menuContainer.classList.add('open')
+  menus.forEach(menu => {
+    menu.classList.add('animated', 'fadeInLeft')
+  })
+  mask.classList.add('open')
+  contentWrapper.classList.add('is-second')
+}
+
+const closeMenu = () => {
+  menuContainer.classList.remove('open')
+  menus.forEach(menu => {
+    menu.classList.remove('animated', 'fadeInLeft')
+  })
+  mask.classList.remove('open')
+  contentWrapper.classList.remove('is-second')
+}
+</script>
+  
+  </body>
+</html>
