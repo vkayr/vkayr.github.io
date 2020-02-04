@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://vkayr.github.io/</id>
     <title>Kayr</title>
-    <updated>2020-02-02T14:08:30.087Z</updated>
+    <updated>2020-02-04T03:48:39.742Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://vkayr.github.io/"/>
     <link rel="self" href="https://vkayr.github.io/atom.xml"/>
@@ -260,6 +260,189 @@ public void findAllTest() throws IOException {
 <p>查询结果</p>
 <figure data-type="image" tabindex="1"><img src="https://vkayr.github.io//post-images/1580650143666.png" alt="" loading="lazy"></figure>
 <h1 id="多对多">多对多</h1>
+<p>多对多可以看成双向的一对多关系</p>
+<h2 id="role到user的多对多">Role到User的多对多</h2>
+<ol>
+<li>用户与角色的关系模型</li>
+</ol>
+<figure data-type="image" tabindex="2"><img src="https://vkayr.github.io//post-images/1580786240267.png" alt="" loading="lazy"></figure>
+<ol start="2">
+<li>编写SQL语句</li>
+</ol>
+<pre><code class="language-sql">SELECT
+	r.ID rid,
+	r.ROLE_NAME,
+	r.ROLE_DESC,
+	u.* 
+FROM
+	role r
+	LEFT JOIN user_role ur ON r.id = ur.RID
+	LEFT JOIN USER u ON uid = u.id
+</code></pre>
+<p>查询结果</p>
+<pre><code class="language-sql">+-----+-----------+--------------+------+----------+---------------------+------+---------+
+| rid | ROLE_NAME | ROLE_DESC    | id   | username | birthday            | sex  | address |
++-----+-----------+--------------+------+----------+---------------------+------+---------+
+|   1 | 院长      | 管理整个学院 |   41 | 老王     | 2018-02-27 17:47:08 | 男   | 北京    |
+|   1 | 院长      | 管理整个学院 |   45 | 小张     | 2018-03-04 12:04:06 | 男   | 上海    |
+|   2 | 总裁      | 管理整个公司 |   41 | 老王     | 2018-02-27 17:47:08 | 男   | 北京    |
+|   3 | 校长      | 管理整个学校 | NULL | NULL     | NULL                | NULL | NULL    |
++-----+-----------+--------------+------+----------+---------------------+------+---------+
+</code></pre>
+<ol start="3">
+<li>编写角色实体类</li>
+</ol>
+<pre><code class="language-java">public class Role implements Serializable {
+    private int roleId;
+    private String roleName;
+    private String roleDesc;
+
+    //多对多的关系映射：一个角色可以赋予多个用户
+    private List&lt;User&gt; users;
+
+    //以及各自的get,set方法和toString
+}
+</code></pre>
+<ol start="4">
+<li>编写持久层接口</li>
+</ol>
+<pre><code class="language-java">public interface IUserDao {
+    /**
+     * 查询所有角色，同时获取对应的用户信息
+     * @return
+     */
+    List&lt;User&gt; findAll();
+}
+</code></pre>
+<ol start="5">
+<li>编写映射配置文件</li>
+</ol>
+<pre><code class="language-xml">&lt;resultMap id=&quot;roleMap&quot; type=&quot;role&quot;&gt;
+        &lt;id property=&quot;roleId&quot; column=&quot;rid&quot;/&gt;
+        &lt;result property=&quot;roleName&quot; column=&quot;role_name&quot;/&gt;
+        &lt;result property=&quot;roleDesc&quot; column=&quot;role_desc&quot;/&gt;
+        &lt;!--配置role对象中user集合的映射--&gt;
+        &lt;collection property=&quot;users&quot; ofType=&quot;user&quot;&gt;
+            &lt;id column=&quot;id&quot; property=&quot;id&quot;/&gt;
+            &lt;result column=&quot;username&quot; property=&quot;username&quot;/&gt;
+            &lt;result column=&quot;birthday&quot; property=&quot;birthday&quot;/&gt;
+            &lt;result column=&quot;sex&quot; property=&quot;sex&quot;/&gt;
+            &lt;result column=&quot;address&quot; property=&quot;address&quot;/&gt;
+        &lt;/collection&gt;
+    &lt;/resultMap&gt;
+
+    &lt;select id=&quot;findAll&quot; resultMap=&quot;roleMap&quot;&gt;
+        SELECT r.ID rid,r.ROLE_NAME,r.ROLE_DESC,u.* from role r
+         left join user_role ur on r.id = ur.RID
+         left join user u on uid = u.id
+    &lt;/select&gt;
+</code></pre>
+<ol start="6">
+<li>编写测试类</li>
+</ol>
+<pre><code class="language-java">    @Test
+    public void findAllTest() throws IOException {
+        List&lt;Role&gt; roles = roleDao.findAll();
+        for (Role role : roles) {
+            System.out.println(&quot;--------每个角色的信息------------&quot;);
+            System.out.println(role);
+            System.out.println(role.getUsers());
+        }
+    }
+</code></pre>
+<p>查询结果</p>
+<figure data-type="image" tabindex="3"><img src="https://vkayr.github.io//post-images/1580786671183.png" alt="" loading="lazy"></figure>
+<h2 id="user到role的多对多">User到Role的多对多</h2>
+<ol>
+<li>编写SQL语句</li>
+</ol>
+<pre><code class="language-sql">SELECT
+	u.*,
+	r.ID rid,
+	r.role_name,
+	r.role_desc 
+FROM
+	USER u
+	LEFT JOIN user_role ur ON id = ur.UID
+	LEFT JOIN role r ON rid = r.ID
+</code></pre>
+<p>查询结果</p>
+<pre><code class="language-sql">+----+----------+---------------------+-----+---------+------+-----------+--------------+
+| id | username | birthday            | sex | address | rid  | role_name | role_desc    |
++----+----------+---------------------+-----+---------+------+-----------+--------------+
+| 41 | 老王     | 2018-02-27 17:47:08 | 男  | 北京    |    1 | 院长      | 管理整个学院 |
+| 45 | 小张     | 2018-03-04 12:04:06 | 男  | 上海    |    1 | 院长      | 管理整个学院 |
+| 41 | 老王     | 2018-02-27 17:47:08 | 男  | 北京    |    2 | 总裁      | 管理整个公司 |
+| 42 | 小二王   | 2018-03-02 15:09:37 | 女  | 上海    | NULL | NULL      | NULL         |
+| 43 | 小二王   | 2018-03-04 11:34:34 | 女  | 广州    | NULL | NULL      | NULL         |
+| 46 | 老王     | 2018-03-07 17:37:26 | 男  | 北京    | NULL | NULL      | NULL         |
+| 48 | 张三     | 2018-03-08 11:44:00 | 女  | 广州    | NULL | NULL      | NULL         |
++----+----------+---------------------+-----+---------+------+-----------+--------------+
+</code></pre>
+<ol start="2">
+<li>修改User实体类</li>
+</ol>
+<pre><code class="language-java">public class User implements Serializable {
+    private Integer id;
+    private String username;
+    private Date birthday;
+    private String sex;
+    private String address;
+
+    //多对多的关系映射：一个用户可以具备多个角色
+    private List&lt;Role&gt; roles;
+
+    //以及各自的get,set方法和toString方法
+}
+</code></pre>
+<ol start="3">
+<li>编写User持久层接口</li>
+</ol>
+<pre><code class="language-java">public interface IUserDao {
+    /**
+     * 查询所有用户，同时获取对应的角色信息
+     * @return
+     */
+    List&lt;User&gt; findAll();
+}
+</code></pre>
+<ol start="4">
+<li>编写映射文件配置信息</li>
+</ol>
+<pre><code class="language-xml">    &lt;resultMap id=&quot;userMap&quot; type=&quot;user&quot;&gt;
+        &lt;id property=&quot;id&quot; column=&quot;id&quot;/&gt;
+        &lt;result property=&quot;username&quot; column=&quot;username&quot;/&gt;
+        &lt;result property=&quot;birthday&quot; column=&quot;birthday&quot;/&gt;
+        &lt;result property=&quot;sex&quot; column=&quot;sex&quot;/&gt;
+        &lt;result property=&quot;address&quot; column=&quot;address&quot;/&gt;
+        &lt;!--配置user对象中role集合的映射--&gt;
+        &lt;collection property=&quot;roles&quot; ofType=&quot;role&quot;&gt;
+            &lt;id column=&quot;rid&quot; property=&quot;roleId&quot;/&gt;
+            &lt;result column=&quot;role_name&quot; property=&quot;roleName&quot;/&gt;
+            &lt;result column=&quot;role_desc&quot; property=&quot;roleDesc&quot;/&gt;
+        &lt;/collection&gt;
+    &lt;/resultMap&gt;
+
+    &lt;select id=&quot;findAll&quot; resultMap=&quot;userMap&quot;&gt;
+        SELECT u.*,r.ID rid,r.role_name,r.role_desc FROM user u
+         LEFT JOIN user_role ur on id = ur.UID
+         left join role r on rid = r.ID;
+    &lt;/select&gt;
+</code></pre>
+<pre><code>5. 编写测试类
+</code></pre>
+<pre><code class="language-java">        @Test
+    public void findAllTest() throws IOException {
+        List&lt;User&gt; users = userDao.findAll();
+        for (User user : users) {
+            System.out.println(&quot;-----每个用户的信息------&quot;);
+            System.out.println(user);
+            System.out.println(user.getRoles());
+        }
+    }
+</code></pre>
+<p>查询结果</p>
+<figure data-type="image" tabindex="4"><img src="https://vkayr.github.io//post-images/1580787806720.png" alt="" loading="lazy"></figure>
 ]]></content>
     </entry>
     <entry>
